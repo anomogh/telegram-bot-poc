@@ -1,17 +1,9 @@
-require('dotenv').config();
+require('dotenv').config()
 
-const http = require('http');
+const express = require('express')
+const app = express()
+const port = process.env.PORT || 3000
 
-const hostname = process.env.HOSTNAME;
-const port = process.env.PORT || 8080;
+app.get('/', (req, res) => res.send('Hello Node.js!'))
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello Node.js!\n');
-});
-
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
-});
-
+app.listen(port, () => console.log(`Example app listening on port ${port}!`))
