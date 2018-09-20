@@ -1,4 +1,7 @@
 {
+  "name": "telegram-bot-poc",
+  "description": "Boom chicka wow wow",
+  "main": "app.js",
   "scripts": {
     "start": "node app.js"
   },
